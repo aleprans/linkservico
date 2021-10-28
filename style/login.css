@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    background-color: rgb(69, 206, 206);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.geral {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background:linear-gradient(#99ffcc, #9999ff);
+    border: 1px solid #0000ff;
+    box-shadow: #000000 0 0 50px;
+    color: rgb(29, 74, 85);
+    border-radius: 10px;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    margin: 20px;
+}
+
+.user, 
+.pass {
+    outline: none;
+    width: 150px;
+    height: 30px;
+    border: solid 1px rgb(41, 108, 124);
+    border-radius: 10px;
+    margin: 10px;
+    color:rgb(29, 74, 85);
+    box-shadow: #000 0 0 5px;
+}
+
+.buttons {
+    flex-direction: row;
+}
+
+.login,
+.voltar {
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: solid 1px rgb(41, 108, 124);
+    color: rgb(4, 18, 22);
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.login:hover,
+.voltar:hover {
+    background-color: rgb(41, 108, 124);
+    color: #fff;
+    /* box-shadow: #000 0 0 10px; */
+}
+
+span {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+a {
+    text-decoration: none;
+    color: rgb(41, 108, 124);
+
+}
+
+.alert {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    color: #fff;
+}

@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.geral {
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    padding: 0 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+.lista {
+    margin-top: 20px;
+    z-index: 9;
+}
+
+.role {
+    background-color: rgb(69, 206, 206);
+}
+
+.logo a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.logo_animate {
+    animation: giro3d 5s ease-in-out infinite;
+}
+
+@keyframes giro3d {
+    50% {
+        transform: scaley(-1)
+    }
+}
+
+.link_logo {
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    color: rgb(1, 105, 105);
+}
+
+.link_logo img {
+    height: 100%;
+}
+
+.login {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.login a:hover {
+    opacity: 0.7;
+}
+
+.btn_login {
+    text-align: center;
+    text-justify: center;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: rgb(0, 128, 128);
+    height: 100%;
+    width: 100%;
+}
+
+div.center {
+    width: 60%;
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: 85% 35%;
+    background-clip: padding-box;
+    background-image: url(../image/link.png);
+    background-color: transparent;
+    padding: 20px;
+}
+
+.name_servico {
+    font-size: 60px;
+    font-weight: bold;
+    color: rgb(0, 128, 128);
+    padding-top: 70px ;
+}
+
+.info_servico {
+    margin-top: 15px;
+    margin-bottom: 105px;
+    font-size: 20px;
+    color: rgb(45, 126, 126);
+    max-width: 40%;
+}
+
+.info_servico a {
+    text-decoration: none;
+    color: rgb(0, 128, 128);
+    background-color: rgb(176, 211, 211);
+    border-radius: 15px;
+    padding:0 5px;
+}
+
+.info_servico a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background-color: rgb(0, 128, 128);
+    width: 180px;
+    opacity: 1;
+    transition: all ease 0.2s;
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
+.button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.titulo_servico h2 {
+    color: rgb(0, 128, 128);
+    margin: 0 0 0 30px;
+}
+
+.titulo_servico {
+    overflow-x: hidden;
+}
+
+.list_area {
+    margin-top: 20px;
+    transition: all ease 0.5s;
+}
+
+.lista:hover .move_right,
+.lista:hover .move_left {
+    opacity: 1;
+}
+
+.move_row {
+    z-index: 9;
+    background-color: transparent;
+}
+
+.row_items {
+    border: solid 1px rgb(0, 128, 128);
+    border-radius: 15px;
+    display: inline-block;
+    width: 140px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.row_items span {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color:rgb(0, 128, 128);
+    font-weight: bold;
+}
+
+.row_items img {
+    height: 100px;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+    z-index: 9;
+}
+
+.row_items img:hover {
+    transform: scale(1);
+}
+
+.move_left,
+.move_right {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    width: 30px;
+    height: 120px;
+    background-color: rgba(69, 206, 206, 0.6);
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.7s;
+}
+
+.move_left {
+    left: 20%;
+    margin-top: 50px;
+    margin-left: -20px;
+}
+
+.move_right {
+    right: 20%;
+    margin-right: -20px;
+    margin-top: 50px;
+}
+
+div.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 20%;
+    float: left;
+    z-index: 99;
+    background-color: rgba(0, 128, 128, 0.1);
+}
+
+.left_interna {
+    display: flex;
+    justify-content: space-around;
+    align-items:center; 
+    flex-direction: column;
+    width: 95%;
+    height: 98vh;
+    z-index: 100;
+}
+
+div.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 20%;
+    float: right;
+    z-index: 99;
+    background-color: rgba(0, 128, 128, 0.1);
+}
+
+.right_interna {
+    display: flex;
+    justify-content: space-around;
+    align-items:center; 
+    flex-direction: column;
+    width: 95%;
+    height: 98vh;
+    z-index: 100;
+}
+
+.items_right,
+.items_left {
+    position: relative;
+    width: 95%;
+    height: 140px;
+    background-color: transparent;
+    border:solid 1px rgb(45, 126, 126);
+}
+
+.items_right img,
+.items_left img {
+    height: inherit;
+}
+
+footer {
+    color: rgb(1, 77, 77);
+    /* margin: 20px 0; */
+    text-align: center;
+    background-color: rgb(69, 206, 206);
+}
+
+
+
+@media (max-width: 760px){
+    .move_left {
+        opacity: 1;
+        margin-left: -70px;
+    }
+    .move_right{
+        opacity: 1;
+        margin-right: -70px;
+    }
+    .name_servico{
+        font-size: 40px;
+    }
+    .info_servico{
+        font-size: 16px;
+        max-width: 100%;
+        margin-right: 30px;
+        color: rgb(8, 110, 110);
+    }
+    .button{
+        font-size: 16px;
+
+    }
+    .header{
+        height: 30px;
+    }
+    span {
+        font-size: 16px;
+    }
+    .btn_login{
+        height: 50%;
+        width: 50%;
+        color: #fff;
+    }
+    
+    .logo img{
+        height: 50%;
+    }
+    div.center {
+        background-image: none;
+        width: 100%;
+    }
+    div.left,
+    div.right {
+        display: none;
+    }
+
+}
