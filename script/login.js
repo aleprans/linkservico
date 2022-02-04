@@ -8,7 +8,7 @@ function logar() {
     var form_data = new FormData()
 
     form_data.append('user',user.val())
-    form_data.append('pass', pass.val())
+    form_data.append('pass', MD5(pass.val()))
     form_data.append('action', 'logar')
 
     $.ajax({
@@ -24,9 +24,16 @@ function logar() {
             if(json.status){
                 limpa_campos()
                 alerta(true, json.msg)
+                if(json.data[0].tipo_usuario == 1){
+                    var tipo = 'cadastroPrest.php'
+                }else {
+                    var tipo = 'cadastroTomador.php'
+                }
                 setInterval(() => {
-                    window.location = 'perfil.php?login='+json.id
+                    window.location = tipo
                 }, 1500);
+            }else {
+                alerta(false, json.msg)
             }
         }
     })
@@ -34,7 +41,7 @@ function logar() {
 
 function voltar() {
     limpa_campos()
-    window.location = "linkservico.php"
+    window.location = "index.php"
 }
 
 function limpa_campos() {

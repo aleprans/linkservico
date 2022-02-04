@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #fff;
+    background-color:#efefef;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -29,8 +29,10 @@ div.geral {
     background-color: transparent;
 }
 
+.fa-search {
+    color: rgb(69, 206, 206);
+}
 .lista {
-    margin-top: 20px;
     z-index: 9;
 }
 
@@ -74,10 +76,14 @@ div.geral {
     align-items: center;
 }
 
-.login a{
+.login a {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff;
+}
+
+.login span {
     color: #fff;
 }
 
@@ -85,7 +91,8 @@ div.geral {
     opacity: 0.7;
 }
 
-.btn_login {
+.btn_login,
+.inf_logado {
     text-align: center;
     text-justify: center;
     text-decoration: none;
@@ -165,6 +172,7 @@ div.center {
 
 .list_area {
     margin-top: 20px;
+    margin-left: 0;
     transition: all ease 0.5s;
 }
 
@@ -233,14 +241,14 @@ div.center {
 .move_right {
     right: 20%;
     margin-right: -20px;
-    margin-top: 50px;
+    margin-top: 50px; 
 }
 
 div.left {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 40px;
     width: 20%;
     float: left;
     z-index: 99;
@@ -261,7 +269,7 @@ div.right {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 40px;
     width: 20%;
     float: right;
     z-index: 99;
@@ -283,7 +291,7 @@ div.right {
     position: relative;
     width: 95%;
     height: 140px;
-    background-color: transparent;
+    background-color: #efefef;
     border:solid 1px rgb(45, 126, 126);
 }
 
@@ -294,35 +302,137 @@ div.right {
 
 footer {
     color: rgb(1, 77, 77);
-    /* margin: 20px 0; */
     text-align: center;
     background-color: rgb(69, 206, 206);
 }
 
+#search_cab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
 
-@media (max-width: 760px){
+.search input {
+    position: inherit;
+    width: 90%;
+    border: solid 1px rgb(0, 128, 128);
+    border-radius: 10px;
+    padding: 5px;
+    margin-right: 5px;
+    outline: none;
+}
+
+.fa {
+    cursor: pointer;
+    margin-right: 5px;
+
+}
+
+.anuncio_mobile {
+    display: none;
+}
+
+@media (max-width: 860px){
+
+    .search input {
+        width: 75%;
+    }
+
+    div.anuncio_botton {
+        position: fixed;
+        bottom: 0;
+        z-index: 999;
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: 100px;
+        margin: 0;
+        background-color: #efefef;
+    }
+
+    .anuncio_mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        min-width: 100%;
+        min-height: 100px;
+        
+    }
+    
+    .items_mobile {
+        width: 100px;
+        height: 80px;
+        padding: 5px;
+        border:solid 1px rgb(45, 126, 126);
+        background-color: #efefef;
+    }
+    
+    .items_mobile img {
+        width: inherit;
+        height: inherit;
+    }
+
     .move_left {
         opacity: 1;
-        margin-left: -70px;
+        left: 0;
+        margin-left: 0;
     }
     .move_right{
         opacity: 1;
-        margin-right: -70px;
+        right: 0;
+        margin-right:0;
     }
+    
+    div.left,
+    div.right {
+        display: none;
+    }
+    
+    .lista {
+        width: 100%;
+    }
+
+    .titulo_servico{
+        width: 100%;
+        color: rgb(0, 51, 51);
+    }
+     
+    div.center {
+        background-position: 50% 30%;
+        background-size: 50%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    } 
+    
     .name_servico{
-        font-size: 40px;
+        display: none;
     }
     .info_servico{
-        font-size: 16px;
-        max-width: 100%;
-        margin-right: 30px;
+        line-height: 40px;
+        min-width: 90%;
+        height: 55%;
+        margin-top: 50px;
+        margin-bottom: 0;
+        padding: 10px 15px;
+        font-size: 20px;
         color: rgb(8, 110, 110);
     }
-    .button{
-        font-size: 16px;
 
+    .opacity {
+        background-color: rgba(255, 255, 255, 0.8);
     }
+
+    /*  Cabecalho */
     .header{
         height: 30px;
     }
@@ -338,13 +448,11 @@ footer {
     .logo img{
         height: 50%;
     }
-    div.center {
-        background-image: none;
-        width: 100%;
-    }
-    div.left,
-    div.right {
-        display: none;
-    }
 
+    /* rodape */
+
+    footer {
+        margin-bottom: 100px;
+        margin-top: 5px;
+    }
 }

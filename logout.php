@@ -2,6 +2,7 @@
 
 session_start();
 unset($_SESSION['usuario']);
-header('Location: login.php');
+// unset($_SESSION['cpf']);
+header('Location: index.php');
 exit;
 ?>

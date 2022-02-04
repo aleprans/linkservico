@@ -1,10 +1,18 @@
+$(document).ready(function() {
+    $("#buscar").val("")
+})
+
 setInterval(function(){ 
     anuncios_r()
     anuncios_l()
+    anuncios_f()
     ; }, 5000);
 
 let valor = 0
 let list = document.getElementById('list_area')
+let anunciantes
+
+busca_anunciantes()
 
 function moveArea_left(){
     let x = valor + Math.round(window.innerWidth / 3)
@@ -26,32 +34,35 @@ function moveArea_right(lista){
     valor = x
 }
 
-function anuncios_r() {
-    let anuncio = ""
-    for (let i = 1; i < 5; i++) {
-        let anunciante = Math.floor(Math.random() * 6) + 1;
-        let anu = '<div class="items_right">'+
-        '<img src="image/anunciantes/'+anunciante+'.png" alt="Anunciantes" style="width: inherit;">'+
-        '</div>'
-        anuncio = anuncio + anu
-    }
-    document.getElementById('right_interna').innerHTML = anuncio 
+function busca_anunciantes(){
+    $.ajax({
+        url: 'api.php',
+        type: 'post',
+        dataType: 'json',
+        cache: false,
+        data: {action: 'anunciantes'},
+        success:function(json){
+            if(json.status) {
+                anunciantes = json.anunciantes
+                anuncios_r()
+                anuncios_l()
+                anuncios_f()
+            }
+        }
+    })
 }
-anuncios_r()
-
-function anuncios_l() {
-    let anuncio = ""
-    for (let i = 1; i < 5; i++) {
-        let anunciante = Math.floor(Math.random() * 6) + 1;
-        let anu = '<div class="items_left">'+
-        '<img src="image/anunciantes/'+anunciante+'.png" alt="Anunciantes" style="width: inherit;">'+
-        '</div>'
-        anuncio = anuncio + anu
-    }
-    document.getElementById('left_interna').innerHTML = anuncio 
-}
-anuncios_l()
 
 function cadastrar() {
-    window.location = 'newPerfil.php'
+    window.location = 'cadastroPrest.php'
+}
+
+function buscar_palavra() {
+    if($('#buscar').val() != "") {
+        let term = $('#buscar').val()
+        window.location = "list_prestadores.php?term="+term
+    }
+}
+
+function buscar_categoria(cat) {
+    window.location = "list_prestadores.php?cat="+cat
 }
